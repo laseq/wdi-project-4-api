@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     post 'login', to: 'authentications#login'
     post 'group_invite', to: 'group_invites#create'
     get 'group_requests', to: 'group_invites#view_requests'
+    delete 'group_invite', to: 'group_invites#destroy'
+
 
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

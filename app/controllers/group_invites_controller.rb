@@ -17,6 +17,10 @@ class GroupInvitesController < ApplicationController
     render json: @invites
   end
 
+  def destroy
+    @invite.destroy
+  end
+
 
 
   def accept
