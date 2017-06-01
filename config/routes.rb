@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :groups
   get 'authentications/register'
 
   get 'authentications/login'
