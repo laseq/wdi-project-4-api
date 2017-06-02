@@ -9,8 +9,7 @@ class GroupsController < ApplicationController
   end
 
   def user_groups
-    # @groups = []
-    # @groups = @current_user.groups_as_creator
+    # We're combining the groups_as_creator and groups_as_member into @groups
     data = []
     data << @current_user.groups_as_creator
     data << @current_user.groups_as_member

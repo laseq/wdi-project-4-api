@@ -17,6 +17,14 @@ class GroupInvitesController < ApplicationController
     render json: @invites
   end
 
+  def update
+    if @invite.update(group_invite_params)
+      render json: @invite
+    else
+      render json: @invite.errors, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @invite.destroy
   end
@@ -24,6 +32,7 @@ class GroupInvitesController < ApplicationController
 
 
   def accept
+
   end
 
   def decline
