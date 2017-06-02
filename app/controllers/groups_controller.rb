@@ -8,6 +8,12 @@ class GroupsController < ApplicationController
     render json: @groups
   end
 
+  def user_groups
+    @groups = @current_user.groups_as_creator
+
+    render json: @groups
+  end
+
   # GET /groups/1
   def show
     render json: @group
