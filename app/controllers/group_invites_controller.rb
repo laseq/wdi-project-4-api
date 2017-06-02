@@ -1,5 +1,5 @@
 class GroupInvitesController < ApplicationController
-  before_action :set_group_invite, only: [:show, :update, :destroy]
+  before_action :set_group_invite, only: [:show, :update, :destroy, :decline]
 
   def create
     @invite = @current_user.requests_as_sender.new(group_invite_params)
@@ -32,10 +32,13 @@ class GroupInvitesController < ApplicationController
 
 
   def accept
+    @invite[:status] = "accepted"
 
+    render json: @invite
   end
 
   def decline
+    @invite.destroy
   end
 
 

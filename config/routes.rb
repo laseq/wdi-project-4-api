@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'group_invites/create'
-
-  get 'group_invites/accept'
-
-  get 'group_invites/decline'
 
   scope :api do
     resources :users
@@ -18,6 +13,7 @@ Rails.application.routes.draw do
     put 'group_invite', to: 'group_invites#update'
     get 'group_requests', to: 'group_invites#view_requests'
     delete 'group_invite', to: 'group_invites#destroy'
+    get 'group_invite/accept', to: 'group_invite#accept'
 
 
 
