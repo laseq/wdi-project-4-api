@@ -9,7 +9,12 @@ class GroupsController < ApplicationController
   end
 
   def user_groups
-    @groups = @current_user.groups_as_creator
+    # @groups = []
+    # @groups = @current_user.groups_as_creator
+    data = []
+    data << @current_user.groups_as_creator
+    data << @current_user.groups_as_member
+    @groups = data.flatten
 
     render json: @groups
   end
