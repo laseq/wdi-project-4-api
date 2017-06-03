@@ -1,5 +1,5 @@
 class Group < ApplicationRecord
-  has_many :requests
+  has_many :requests, dependent: :destroy
   belongs_to :creator, :class_name => "User", :foreign_key => :creator_id
   has_many :invited_members, -> { distinct }, through: :requests, source: :receiver
   has_many :accepted_members
