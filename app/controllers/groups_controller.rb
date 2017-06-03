@@ -40,11 +40,15 @@ class GroupsController < ApplicationController
 
   # PATCH/PUT /groups/1
   def update
-    if @group.update(group_params)
+
+    if @current_user.groups_as_creator.find_by_id(@group.id).present? == false
+      render json: { "message": "You can't edit this group as you're not an admin" }, status: :unprocessable_entity
+    elsif @current_user.groups_as_creator.find_by_id(@group.id).update(group_params)
       render json: @group
     else
       render json: @group.errors, status: :unprocessable_entity
     end
+
   end
 
   # DELETE /groups/1
