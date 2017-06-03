@@ -17,6 +17,12 @@ class GroupInvitesController < ApplicationController
     render json: @invites
   end
 
+  def current_user_pending_requests
+    @invites = Request.where("receiver_id = ? AND status = ?", @current_user.id, "pending")
+
+    render json: @invites
+  end
+
   def update
     if @invite.update(group_invite_params)
       render json: @invite

@@ -13,8 +13,8 @@ Rails.application.routes.draw do
     put 'group_invite', to: 'group_invites#update'
     get 'group_requests', to: 'group_invites#view_requests'
     delete 'group_invite', to: 'group_invites#destroy'
-    get 'group_invite/accept', to: 'group_invite#accept'
-
+    get 'group_invite/accept', to: 'group_invites#accept'
+    get 'group_invite/pending', to: 'group_invites#current_user_pending_requests'
 
 
   end
