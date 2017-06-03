@@ -8,6 +8,8 @@ class Request < ApplicationRecord
     private
 
       def save_default_status
-        self.status = 'pending'
+        if self.status != 'accepted'
+          self.status = 'pending'
+        end
       end
 end

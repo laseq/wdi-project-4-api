@@ -48,6 +48,14 @@ We'll then do another pub crawl, visit a strip club, and continue with the pub c
 
 See the agenda below for more details.", image: "http://www.henorstag.com/getattachment/Stag-Do/Locations/Stag-Party-Ireland/Stag-Do-Ideas-Mayo/Stag-Do-Ideas-Westport/Stag-Do-Westport/westport-stag-do.jpg.aspx", creator_id: u6.id)
 
+g3 = Group.create!(name: "Alexi's Stag Do", description: "Alexi's going to be having his stag do over the weekend from 24th to 25th June 2017.
+
+We'll be meeting up in Bristol on Saturday 1st July.
+
+We'll be doing a pub crawl dressed as world leaders. Alexi will be dressed as our Dear Leader.
+
+See the agenda below to see the pubs we'll be visiting.", image: "http://www.henorstag.com/getattachment/Stag-Do/Locations/Stag-Party-Ireland/Stag-Do-Ideas-Mayo/Stag-Do-Ideas-Westport/Stag-Do-Westport/westport-stag-do.jpg.aspx", creator_id: u11.id)
+
 
 r1 = Request.create!(group_id: g1.id, sender_id: u1.id, receiver_id: u2.id, status: "accepted")
 r2 = Request.create!(group_id: g1.id, sender_id: u1.id, receiver_id: u3.id, status: "accepted")
@@ -57,3 +65,9 @@ r5 = Request.create!(group_id: g2.id, sender_id: u6.id, receiver_id: u7.id, stat
 r6 = Request.create!(group_id: g2.id, sender_id: u6.id, receiver_id: u8.id, status: "accepted")
 r7 = Request.create!(group_id: g2.id, sender_id: u6.id, receiver_id: u9.id, status: "pending")
 r8 = Request.create!(group_id: g2.id, sender_id: u6.id, receiver_id: u10.id, status: "pending")
+r9 = Request.create!(group_id: g2.id, sender_id: u6.id, receiver_id: u1.id, status: "accepted")
+r10 = Request.create!(group_id: g3.id, sender_id: u11.id, receiver_id: u12.id, status: "pending")
+r11 = Request.create!(group_id: g3.id, sender_id: u11.id, receiver_id: u13.id, status: "pending")
+r12 = Request.create!(group_id: g3.id, sender_id: u11.id, receiver_id: u14.id, status: "accepted")
+r13 = Request.create!(group_id: g3.id, sender_id: u11.id, receiver_id: u15.id, status: "accepted")
+r14 = Request.create!(group_id: g3.id, sender_id: u11.id, receiver_id: u1.id, status: "pending")

@@ -9,10 +9,13 @@ class GroupsController < ApplicationController
   end
 
   def user_groups
+    # We're finding the group ids where the current user has accepted the group join request
+    valid_group_ids = @current_user.requests_as_receiver.where(status:"accepted").pluck("group_id")
     # We're combining the groups_as_creator and groups_as_member into @groups
     data = []
     data << @current_user.groups_as_creator
-    data << @current_user.groups_as_member
+    # data << @current_user.groups_as_member
+    data << @current_user.groups_as_member.where(id: valid_group_ids)
     @groups = data.flatten
 
     render json: @groups
