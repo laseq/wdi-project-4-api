@@ -34,7 +34,7 @@ We're going to go away camping on Friday night and go hiking and canoeing the ne
 
 We'll head over to the next town where we'll stop for lunch at a pub.
 
-See the agenda below for more details. Make sure you indicate whether you'll be there or not.",image: "https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/9/a/7/6/600_459099542.jpeg", creator_id: u1.id)
+See the agenda below for more details. Make sure you indicate whether you'll be there or not.", image: "https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/9/a/7/6/600_459099542.jpeg", creator_id: u1.id)
 
 g2 = Group.create!(name: "Brad's Stag Do", description: "Brad's going to be having his stag do over the weekend from 24th to 25th June 2017.
 
@@ -46,19 +46,14 @@ We'll be going to a shooting range in the morning followed by lunch at a restaur
 
 We'll then do another pub crawl, visit a strip club, and continue with the pub crawl.
 
-See the agenda below for more details.",image: "http://www.henorstag.com/getattachment/Stag-Do/Locations/Stag-Party-Ireland/Stag-Do-Ideas-Mayo/Stag-Do-Ideas-Westport/Stag-Do-Westport/westport-stag-do.jpg.aspx", creator_id: u6.id)
+See the agenda below for more details.", image: "http://www.henorstag.com/getattachment/Stag-Do/Locations/Stag-Party-Ireland/Stag-Do-Ideas-Mayo/Stag-Do-Ideas-Westport/Stag-Do-Westport/westport-stag-do.jpg.aspx", creator_id: u6.id)
 
-
-
-
-# u1.requests.create!(group_id: g1.id, sender_id: u1.id, receiver_id: u2.id)
-# u1.requests.create!(group_id: g1.id, sender_id: u1.id, receiver_id: u3.id)
 
 r1 = Request.create!(group_id: g1.id, sender_id: u1.id, receiver_id: u2.id, status: "accepted")
 r2 = Request.create!(group_id: g1.id, sender_id: u1.id, receiver_id: u3.id, status: "accepted")
 r3 = Request.create!(group_id: g1.id, sender_id: u1.id, receiver_id: u4.id, status: "pending")
 r4 = Request.create!(group_id: g1.id, sender_id: u1.id, receiver_id: u5.id, status: "pending")
-r5 = Request.create!(group_id: g1.id, sender_id: u6.id, receiver_id: u7.id, status: "accepted")
-r6 = Request.create!(group_id: g1.id, sender_id: u6.id, receiver_id: u8.id, status: "accepted")
-r7 = Request.create!(group_id: g1.id, sender_id: u6.id, receiver_id: u9.id, status: "pending")
-r8 = Request.create!(group_id: g1.id, sender_id: u6.id, receiver_id: u10.id, status: "pending")
+r5 = Request.create!(group_id: g2.id, sender_id: u6.id, receiver_id: u7.id, status: "accepted")
+r6 = Request.create!(group_id: g2.id, sender_id: u6.id, receiver_id: u8.id, status: "accepted")
+r7 = Request.create!(group_id: g2.id, sender_id: u6.id, receiver_id: u9.id, status: "pending")
+r8 = Request.create!(group_id: g2.id, sender_id: u6.id, receiver_id: u10.id, status: "pending")

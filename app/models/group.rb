@@ -4,7 +4,6 @@ class Group < ApplicationRecord
   has_many :invited_members, -> { distinct }, through: :requests, source: :receiver
   has_many :accepted_members
   has_many :pending_members
-  has_one :image
 
   # def members
   #   accepted = []
