@@ -11,6 +11,22 @@ class GroupInvitesController < ApplicationController
     end
   end
 
+  # Sending group join requests en masse
+  def mass_create
+    requests = []
+    group_invite_params[:mass_requests].each do |element|
+      requests << @current_user.requests_as_sender.new(:group_id => element[:group_id], :receiver_id => element[:receiver_id])
+    end
+
+    @invites = Request.import requests
+
+    if @invites
+      render json: requests, status: :created
+    else
+      render json: requests.errors, status: :unprocessable_entity
+    end
+  end
+
   def view_requests
     @invites = Group.find_by_id(params[:group_id]).requests
 
@@ -58,6 +74,6 @@ class GroupInvitesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def group_invite_params
-      params.permit(:group_id, :status, :sender_id, :receiver_id)
+      params.permit(:group_id, :status, :sender_id, :receiver_id, mass_requests: [:group_id, :receiver_id])
     end
 end

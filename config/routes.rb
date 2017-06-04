@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get 'user-groups', to: 'groups#user_groups'
 
     post 'group_invites', to: 'group_invites#create'
+    post 'group_invites/mass', to: 'group_invites#mass_create'
     put 'group_invites', to: 'group_invites#update'
     get 'group_requests', to: 'group_invites#view_requests'
     delete 'group_invites/:id', to: 'group_invites#destroy'

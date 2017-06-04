@@ -28,7 +28,7 @@ u15 = User.create!(username: "will", first_name: "Will", last_name: "Smith", ema
 
 
 
-g1 = Group.create!(name: "Tom's Stag Do", description: "Tim's going to be having his stag do over the weekend from 16th to 18th June 2017.
+g1 = Group.create!(name: "Tom's Stag Do", description: "Tom's going to be having his stag do over the weekend from 16th to 18th June 2017.
 
 We're going to go away camping on Friday night and go hiking and canoeing the next day until the afternoon. We'll then enjoy the night out in town and get back to camp.
 
