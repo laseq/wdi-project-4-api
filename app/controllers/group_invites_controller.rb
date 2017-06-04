@@ -24,8 +24,9 @@ class GroupInvitesController < ApplicationController
   end
 
   def update
-    if @invite.update(group_invite_params)
-      render json: @invite
+    if @current_user.requests_as_receiver.find_by_id(params[:id]).update(status: "accepted")
+    # if @invite.update(group_invite_params)
+      render json: @current_user.requests_as_receiver.find_by_id(params[:id])
     else
       render json: @invite.errors, status: :unprocessable_entity
     end

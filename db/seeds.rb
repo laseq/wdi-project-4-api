@@ -54,7 +54,7 @@ We'll be meeting up in Bristol on Saturday 1st July.
 
 We'll be doing a pub crawl dressed as world leaders. Alexi will be dressed as our Dear Leader.
 
-See the agenda below to see the pubs we'll be visiting.", image: "http://www.henorstag.com/getattachment/Stag-Do/Locations/Stag-Party-Ireland/Stag-Do-Ideas-Mayo/Stag-Do-Ideas-Westport/Stag-Do-Westport/westport-stag-do.jpg.aspx", creator_id: u11.id)
+See the agenda below to see the pubs we'll be visiting.", image: "http://frontporchdenver.com/wp-content/uploads/sites/2/2015/04/beer-2-e1429569011675.jpg", creator_id: u11.id)
 
 
 r1 = Request.create!(group_id: g1.id, sender_id: u1.id, receiver_id: u2.id, status: "accepted")
