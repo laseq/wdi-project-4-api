@@ -13,6 +13,14 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  # GET /users/search_by_email for sending group invites
+  def search_by_email
+    @user = User.find_by_email(user_params[:email])
+
+    # render json: @user.as_json(only: [:id, :first_name, :last_name, :email])
+    render json: @user
+  end
+
   # POST /users
   def create
     @user = User.new(user_params)
