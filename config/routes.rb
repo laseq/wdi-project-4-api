@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :events
   scope :api do
 
     get 'users/search_by_email/:email', to: 'users#search_by_email', :constraints => { :email=> /[^\/]*/ }
