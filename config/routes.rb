@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     post 'group_invites/mass', to: 'group_invites#mass_create'
     put 'group_invites', to: 'group_invites#update'
     get 'group_requests', to: 'group_invites#view_requests'
+    delete 'group_invites/remove_by_group_and_user', to: 'group_invites#remove_by_group_and_user'
     delete 'group_invites/:id', to: 'group_invites#destroy'
     get 'group_invites/accept', to: 'group_invites#accept'
     get 'group_invites/pending', to: 'group_invites#current_user_pending_requests'

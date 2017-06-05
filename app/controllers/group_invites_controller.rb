@@ -52,6 +52,12 @@ class GroupInvitesController < ApplicationController
     @invite.destroy
   end
 
+  def remove_by_group_and_user
+    the_record = Request.where("receiver_id = ? AND group_id = ?", params[:receiver_id], params[:group_id])
+    # @invite = Request.where("receiver_id = ? AND group_id = ?", group_invite_params[:receiver_id], group_invite_params[:group_id])
+    @invite = Request.find_by_id(the_record.pluck("id"))
+    @invite.destroy
+  end
 
 
   def accept
