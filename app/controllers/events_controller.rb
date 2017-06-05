@@ -15,8 +15,9 @@ class EventsController < ApplicationController
 
   # POST /events
   def create
-    @event = Event.new(event_params)
-
+    # @event = Event.new(event_params)
+    @group = Group.find_by_id(params[:group_id])
+    @event = @group.events.new(event_params)
     if @event.save
       render json: @event, status: :created, location: @event
     else
@@ -26,7 +27,10 @@ class EventsController < ApplicationController
 
   # PATCH/PUT /events/1
   def update
+    # @group = Group.find_by_id(params[:group_id])
+
     if @event.update(event_params)
+    # if @group.events.find_by_id(params[:id]).update(event_params)
       render json: @event
     else
       render json: @event.errors, status: :unprocessable_entity

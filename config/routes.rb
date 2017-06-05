@@ -13,12 +13,12 @@ Rails.application.routes.draw do
     resources :users
     resources :groups
 
-    get 'groups/:id/events', to: 'events#index'
-    post 'groups/:id/events', to: 'events#create'
-    get 'groups/:id/events/:id', to: 'events#show'
-    patch 'groups/:id/events/:id', to: 'events#update'
-    put 'groups/:id/events/:id', to: 'events#update'
-    delete 'groups/:id/events/:id', to: 'events#destroy'
+    get 'groups/:group_id/events', to: 'events#index'
+    post 'groups/:group_id/events', to: 'events#create'
+    get 'groups/:group_id/events/:id', to: 'events#show'
+    patch 'groups/:group_id/events/:id', to: 'events#update'
+    put 'groups/:group_id/events/:id', to: 'events#update'
+    delete 'groups/:group_id/events/:id', to: 'events#destroy'
 
     post 'register', to: 'authentications#register'
     post 'login', to: 'authentications#login'
