@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Event.destroy_all
 Request.destroy_all
 User.destroy_all
 Group.destroy_all
@@ -34,12 +35,12 @@ We'll head over to the next town where we'll stop for lunch at a pub.
 
 See the agenda below for more details. Make sure you indicate whether you'll be there or not.", image: "https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/9/a/7/6/600_459099542.jpeg", creator_id: u1.id)
 
-g1.events.create!(name: "Campfire evening", description: "We'll meet up at the campsite, pitch our tents and make merry around the campfire. Make sure you bring plenty of food and drink.", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: DateTime.new(2017, 6, 16,  19,  0,  0), end_time: DateTime.new(2017, 6, 17,  0,  0,  0))
-g1.events.create!(name: "Sleep", description: "We need to get to sleep by midnight if we want to get stuff done tomorrow.", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Whatever you sleep in", start_time: DateTime.new(2017, 6, 17,  0,  0,  0), end_time: DateTime.new(2017, 6, 17,  8,  0,  0))
-g1.events.create!(name: "Breakfast", description: "A campfire breakfast. Make sure you bring enough food for breakfast.", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: DateTime.new(2017, 6, 17,  8,  0,  0), end_time: DateTime.new(2017, 6, 17,  9,  30,  0))
-g1.events.create!(name: "Hiking to the canoe site", description: "The canoe site in on lake Windermere and will be about an hours walk through the hills", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: DateTime.new(2017, 6, 17,  10,  30,  0), end_time: DateTime.new(2017, 6, 17,  11,  30,  0))
-g1.events.create!(name: "Canoeing", description: "Canoeing at Brockhole on Windermere. Their website is http://www.brockhole.co.uk/ if you want to check it out.", location: "Brockhole on Windermere, Windermere, Cumbria LA23 1LJ", dress_code: "Something you don't mind getting wet", start_time: DateTime.new(2017, 6, 17,  11,  30,  0), end_time: DateTime.new(2017, 6, 17,  13,  30,  0))
-g1.events.create!(name: "Lunch", description: "There's a pub nearby where we'll have lunch at.", location: "Brockhole on Windermere, Windermere, Cumbria LA23 1LJ", dress_code: "Warm outdoor clothes", start_time: DateTime.new(2017, 6, 17,  13,  30,  0), end_time: DateTime.new(2017, 6, 17,  14,  30,  0))
+g1.events.create!(name: "Campfire evening", description: "We'll meet up at the campsite, pitch our tents and make merry around the campfire. Make sure you bring plenty of food and drink.", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: Time.local(2017, 6, 16,  19,  0), end_time: Time.local(2017, 6, 17,  0,  0))
+g1.events.create!(name: "Sleep", description: "We need to get to sleep by midnight if we want to get stuff done tomorrow.", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Whatever you sleep in", start_time: Time.local(2017, 6, 17,  0,  0), end_time: Time.local(2017, 6, 17,  8,  0))
+g1.events.create!(name: "Breakfast", description: "A campfire breakfast. Make sure you bring enough food for breakfast.", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: Time.local(2017, 6, 17,  8,  0), end_time: Time.local(2017, 6, 17,  9,  30))
+g1.events.create!(name: "Hiking to the canoe site", description: "The canoe site in on lake Windermere and will be about an hours walk through the hills", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: Time.local(2017, 6, 17,  10,  30), end_time: Time.local(2017, 6, 17,  11,  30))
+g1.events.create!(name: "Canoeing", description: "Canoeing at Brockhole on Windermere. Their website is http://www.brockhole.co.uk/ if you want to check it out.", location: "Brockhole on Windermere, Windermere, Cumbria LA23 1LJ", dress_code: "Something you don't mind getting wet", start_time: Time.local(2017, 6, 17,  11,  30), end_time: Time.local(2017, 6, 17,  13,  30))
+g1.events.create!(name: "Lunch", description: "There's a pub nearby where we'll have lunch at.", location: "Brockhole on Windermere, Windermere, Cumbria LA23 1LJ", dress_code: "Warm outdoor clothes", start_time: Time.local(2017, 6, 17,  13,  30), end_time: Time.local(2017, 6, 17,  14,  30))
 
 g2 = Group.create!(name: "Brad's Stag Do", description: "Brad's going to be having his stag do over the weekend from 24th to 25th June 2017.
 
