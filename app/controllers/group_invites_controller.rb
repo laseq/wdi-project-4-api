@@ -15,7 +15,7 @@ class GroupInvitesController < ApplicationController
   def mass_create
     requests = []
     group_invite_params[:mass_requests].each do |element|
-      requests << @current_user.requests_as_sender.new(:group_id => element[:group_id], :receiver_id => element[:receiver_id])
+      requests << @current_user.requests_as_sender.new(:group_id => element[:group_id], :receiver_id => element[:receiver_id], :status => "pending")
     end
 
     @invites = Request.import requests
