@@ -1,13 +1,24 @@
 Rails.application.routes.draw do
 
-  resources :events
+  # scope :groups do
+  #   resources :events
+  # end
+
   scope :api do
 
     get 'users/search_by_email/:email', to: 'users#search_by_email', :constraints => { :email=> /[^\/]*/ }
     post 'users/search_by_email', to: 'users#search_by_email_in_group'
 
+    resources :events
     resources :users
     resources :groups
+
+    get 'groups/:id/events', to: 'events#index'
+    post 'groups/:id/events', to: 'events#create'
+    get 'groups/:id/events/:id', to: 'events#show'
+    patch 'groups/:id/events/:id', to: 'events#update'
+    put 'groups/:id/events/:id', to: 'events#update'
+    delete 'groups/:id/events/:id', to: 'events#destroy'
 
     post 'register', to: 'authentications#register'
     post 'login', to: 'authentications#login'
