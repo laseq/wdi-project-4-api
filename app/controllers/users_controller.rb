@@ -22,6 +22,19 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  def search_by_email_in_group
+    @user = User.find_by(email: user_params[:email])
+    @group = Group.find_by_id(params[:group_id])
+    @message = {:message => "This user has already received an invite"}
+
+    if (@group.invited_members.where(email: user_params[:email]).length == 0)
+      render json: @user
+    else
+      render json: @message
+    end
+
+  end
+
   # POST /users
   def create
     @user = User.new(user_params)

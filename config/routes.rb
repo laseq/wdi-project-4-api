@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   scope :api do
 
     get 'users/search_by_email/:email', to: 'users#search_by_email', :constraints => { :email=> /[^\/]*/ }
+    post 'users/search_by_email', to: 'users#search_by_email_in_group'
 
     resources :users
     resources :groups
