@@ -29,8 +29,10 @@ class UsersController < ApplicationController
 
     if (@group.invited_members.where(email: user_params[:email]).length == 0)
       render json: @user
-    else
+    elsif (@user.present?)
       render json: @message
+    else
+      render json: @user.errors, status: :unprocessable_entity
     end
 
   end
