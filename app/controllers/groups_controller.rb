@@ -18,6 +18,11 @@ class GroupsController < ApplicationController
     data << @current_user.groups_as_member.where(id: valid_group_ids)
     @groups = data.flatten
 
+    # Experimental stuff for ascending order of time
+    # ascending_const = Group.events_ascending_order
+    # byebug
+    # @groups[:events] = Group.events_ascending_order
+
     render json: @groups
   end
 

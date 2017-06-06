@@ -4,7 +4,8 @@ class Group < ApplicationRecord
   has_many :invited_members, -> { distinct }, through: :requests, source: :receiver
   has_many :accepted_members
   has_many :pending_members
-  has_many :events
+  has_many :events, -> { order(start_time: :asc) }
+  # scope :events_ascending_order, -> { order("events.start_time: :asc") }
 
   # def members
   #   accepted = []

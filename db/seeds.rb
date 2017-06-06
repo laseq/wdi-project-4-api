@@ -35,19 +35,18 @@ We'll head over to the next town where we'll stop for lunch at a pub.
 
 See the agenda below for more details. Make sure you indicate whether you'll be there or not.", image: "https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/9/a/7/6/600_459099542.jpeg", creator_id: u1.id)
 
-# Testing ended event
-g1.events.create!(name: "Testing ended event", description: "Testing ended event by pre saving the status 'Ended' in the event model event.rb file", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: Time.local(2017, 6, 5,  8,  0), end_time: Time.local(2017, 6, 5,  10,  0))
-
-# Testing current event
-g1.events.create!(name: "Testing current event", description: "Testing current event by pre saving the status 'Now' in the event model event.rb file.", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: Time.local(2017, 6, 5,  22,  0), end_time: Time.local(2017, 6, 7,  8,  0))
-
-
 g1.events.create!(name: "Campfire evening", description: "We'll meet up at the campsite, pitch our tents and make merry around the campfire. Make sure you bring plenty of food and drink.", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: Time.local(2017, 6, 16,  19,  0), end_time: Time.local(2017, 6, 17,  0,  0))
 g1.events.create!(name: "Sleep", description: "We need to get to sleep by midnight if we want to get stuff done tomorrow.", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Whatever you sleep in", start_time: Time.local(2017, 6, 17,  0,  0), end_time: Time.local(2017, 6, 17,  8,  0))
 g1.events.create!(name: "Breakfast", description: "A campfire breakfast. Make sure you bring enough food for breakfast.", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: Time.local(2017, 6, 17,  8,  0), end_time: Time.local(2017, 6, 17,  9,  30))
 g1.events.create!(name: "Hiking to the canoe site", description: "The canoe site in on lake Windermere and will be about an hours walk through the hills", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: Time.local(2017, 6, 17,  10,  30), end_time: Time.local(2017, 6, 17,  11,  30))
 g1.events.create!(name: "Canoeing", description: "Canoeing at Brockhole on Windermere. Their website is http://www.brockhole.co.uk/ if you want to check it out.", location: "Brockhole on Windermere, Windermere, Cumbria LA23 1LJ", dress_code: "Something you don't mind getting wet", start_time: Time.local(2017, 6, 17,  11,  30), end_time: Time.local(2017, 6, 17,  13,  30))
 g1.events.create!(name: "Lunch", description: "There's a pub nearby where we'll have lunch at.", location: "Brockhole on Windermere, Windermere, Cumbria LA23 1LJ", dress_code: "Warm outdoor clothes", start_time: Time.local(2017, 6, 17,  13,  30), end_time: Time.local(2017, 6, 17,  14,  30))
+
+# Testing ended event
+g1.events.create!(name: "Testing ended event", description: "Testing ended event by pre saving the status 'Ended' in the event model event.rb file", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: Time.local(2017, 6, 5,  8,  0), end_time: Time.local(2017, 6, 5,  10,  0))
+
+# Testing current event
+g1.events.create!(name: "Testing current event", description: "Testing current event by pre saving the status 'Now' in the event model event.rb file.", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: Time.local(2017, 6, 5,  22,  0), end_time: Time.local(2017, 6, 7,  8,  0))
 
 g2 = Group.create!(name: "Brad's Stag Do", description: "Brad's going to be having his stag do over the weekend from 24th to 25th June 2017.
 
@@ -60,6 +59,12 @@ We'll be going to a shooting range in the morning followed by lunch at a restaur
 We'll then do another pub crawl, visit a strip club, and continue with the pub crawl.
 
 See the agenda below for more details.", image: "http://www.henorstag.com/getattachment/Stag-Do/Locations/Stag-Party-Ireland/Stag-Do-Ideas-Mayo/Stag-Do-Ideas-Westport/Stag-Do-Westport/westport-stag-do.jpg.aspx", creator_id: u6.id)
+
+# Testing ended event
+g2.events.create!(name: "Testing group order on the dashboard", description: "Testing to see if groups get ordered by event start time", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: Time.local(2017, 5, 1,  8,  0), end_time: Time.local(2017, 5, 1,  10,  0))
+
+# Testing current event
+g2.events.create!(name: "Testing earlier start time", description: "This should be above in the list.", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: Time.local(2017, 4, 1,  22,  0), end_time: Time.local(2017, 4, 1,  8,  0))
 
 g3 = Group.create!(name: "Alexi's Stag Do", description: "Alexi's going to be having his stag do over the weekend from 24th to 25th June 2017.
 
