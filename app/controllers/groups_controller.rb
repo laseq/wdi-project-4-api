@@ -5,6 +5,9 @@ class GroupsController < ApplicationController
   def index
     @groups = Group.all
 
+    # Experimenting with the scope 'events_ascending_order' to order groups by event times
+    # @groups = Group.events_ascending_order
+
     render json: @groups
   end
 
@@ -14,16 +17,16 @@ class GroupsController < ApplicationController
     # We're combining the groups_as_creator and groups_as_member into @groups
     data = []
     data << @current_user.groups_as_creator
-    # data << @current_user.groups_as_member
     data << @current_user.groups_as_member.where(id: valid_group_ids)
     @groups = data.flatten
 
-    # Experimental stuff for ascending order of time
-    # ascending_const = Group.events_ascending_order
-    # byebug
-    # @groups[:events] = Group.events_ascending_order
+    # The line below converts the @groups array into an ActiveRecord::Relation
+    # so that we can order the groups by ascending order of start_time
+    # using the scope 'events_ascending_order' from the Group model
+    @groups = Group.where(id: @groups.map(&:id)).events_ascending_order
 
     render json: @groups
+
   end
 
   # GET /groups/1

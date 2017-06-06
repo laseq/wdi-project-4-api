@@ -5,7 +5,7 @@ class Group < ApplicationRecord
   has_many :accepted_members
   has_many :pending_members
   has_many :events, -> { order(start_time: :asc) }
-  # scope :events_ascending_order, -> { order("events.start_time: :asc") }
+  scope :events_ascending_order, -> { includes(:events).order("events.start_time ASC") }
 
   # def members
   #   accepted = []
