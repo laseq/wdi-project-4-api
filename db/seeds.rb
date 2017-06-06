@@ -35,6 +35,13 @@ We'll head over to the next town where we'll stop for lunch at a pub.
 
 See the agenda below for more details. Make sure you indicate whether you'll be there or not.", image: "https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/9/a/7/6/600_459099542.jpeg", creator_id: u1.id)
 
+# Testing ended event
+g1.events.create!(name: "Testing ended event", description: "Testing ended event by pre saving the status 'Ended' in the event model event.rb file", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: Time.local(2017, 6, 5,  8,  0), end_time: Time.local(2017, 6, 5,  10,  0))
+
+# Testing current event
+g1.events.create!(name: "Testing current event", description: "Testing current event by pre saving the status 'Now' in the event model event.rb file.", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: Time.local(2017, 6, 5,  22,  0), end_time: Time.local(2017, 6, 7,  8,  0))
+
+
 g1.events.create!(name: "Campfire evening", description: "We'll meet up at the campsite, pitch our tents and make merry around the campfire. Make sure you bring plenty of food and drink.", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: Time.local(2017, 6, 16,  19,  0), end_time: Time.local(2017, 6, 17,  0,  0))
 g1.events.create!(name: "Sleep", description: "We need to get to sleep by midnight if we want to get stuff done tomorrow.", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Whatever you sleep in", start_time: Time.local(2017, 6, 17,  0,  0), end_time: Time.local(2017, 6, 17,  8,  0))
 g1.events.create!(name: "Breakfast", description: "A campfire breakfast. Make sure you bring enough food for breakfast.", location: "Thornthwaite, Keswick, Cumbria CA12 5RZ", dress_code: "Warm outdoor clothes", start_time: Time.local(2017, 6, 17,  8,  0), end_time: Time.local(2017, 6, 17,  9,  30))
