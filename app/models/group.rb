@@ -5,7 +5,13 @@ class Group < ApplicationRecord
   has_many :accepted_members
   has_many :pending_members
   has_many :events, -> { order(start_time: :asc) }
+  has_many :events_by_date
   scope :events_ascending_order, -> { includes(:events).order("events.start_time ASC") }
+
+  def events_by_date
+    events.group_by{ |event| event.start_time.strftime("%a %d %b %Y") }
+    # t.strftime("%d:%m:%Y")
+  end
 
   # def members
   #   accepted = []

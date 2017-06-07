@@ -4,6 +4,9 @@ class GroupSerializer < ActiveModel::Serializer
   has_many :invited_members
   has_many :accepted_members
   has_many :pending_members
-  # has_many :members
   has_many :events
+  has_many :events_by_date
+
+
+  # has_many :members
 end
