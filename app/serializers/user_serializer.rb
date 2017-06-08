@@ -3,6 +3,7 @@ class UserSerializer < ActiveModel::Serializer
   has_many :groups_as_creator
   has_many :groups_as_member
   has_many :usergroups
+  has_many :upcoming_events
 
   def usergroups
     data = []
