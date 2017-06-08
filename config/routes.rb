@@ -19,6 +19,9 @@ Rails.application.routes.draw do
     patch 'groups/:group_id/events/:id', to: 'events#update'
     put 'groups/:group_id/events/:id', to: 'events#update'
     delete 'groups/:group_id/events/:id', to: 'events#destroy'
+    get 'groups/:group_id/events/:id/attending', to: 'events#attending'
+    get 'groups/:group_id/events/:id/not_attending', to: 'events#not_attending'
+    post 'groups/:group_id/events/:id/attendance', to: 'events#state_attendance'
 
     post 'register', to: 'authentications#register'
     post 'login', to: 'authentications#login'
