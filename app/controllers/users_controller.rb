@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render json: @user
+    render json: @user, include: ['upcoming_events.members_attending', 'upcoming_events.members_not_attending', 'upcoming_events.members_pending']
   end
 
   # GET /users/search_by_email for sending group invites

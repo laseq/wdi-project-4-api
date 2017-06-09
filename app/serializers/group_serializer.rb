@@ -24,9 +24,9 @@ class GroupSerializer < ActiveModel::Serializer
   end
 
   def events_by_date
-  customised_events_by_date = []
+  customised_events_by_date = {}
     object.events_by_date.each do |date, events|
-      custom_events_by_date = {}
+      # custom_events_by_date = {}
       customised_events = []
       events.each do |event|
         e1 = Event.find(event[:id])
@@ -36,8 +36,9 @@ class GroupSerializer < ActiveModel::Serializer
         custom_event[:members_pending] = e1.members_pending.select(User.column_names - ["created_at", "updated_at", "password_digest"])
         customised_events.push(custom_event)
       end
-      custom_events_by_date[date] = customised_events
-      customised_events_by_date.push(custom_events_by_date)
+      # custom_events_by_date[date] = customised_events
+      # customised_events_by_date.push(custom_events_by_date)
+      customised_events_by_date[date] = customised_events
     end
     return customised_events_by_date
   end
