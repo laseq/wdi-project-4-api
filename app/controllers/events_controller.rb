@@ -57,14 +57,14 @@ class EventsController < ApplicationController
 
       if (@attendance_record)
         if @attendance_record.update(event_id: @event.id, user_id: @current_user.id, status: params[:attendance_status])
-          render json: @attendance_record
+          render json: @attendance_record, include: ['event.members_attending', 'event.members_not_attending', 'event.members_pending']
         else
           render json: @attendance_record.errors, status: :unprocessable_entity
         end
       else
         @attendance = @current_user.attendance_statuses.new(event_id: params[:id], status: params[:attendance_status])
         if @attendance.save
-          render json: @attendance, status: :created
+          render json: @attendance, include: ['event.members_attending', 'event.members_not_attending', 'event.members_pending'], status: :created
         else
           render json: @attendance.errors, status: :unprocessable_entity
         end
