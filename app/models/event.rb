@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
   belongs_to :group
 
-  has_many :attendance_statuses
+  has_many :attendance_statuses, dependent: :destroy
   has_many :attending_statuses, -> { where status: "attending"}, foreign_key: "event_id", class_name: "AttendanceStatus"
   has_many :not_attending_statuses, -> { where status: "not attending"}, foreign_key: "event_id", class_name: "AttendanceStatus"
   has_many :pending_statuses, -> { where status: "pending"}, foreign_key: "event_id", class_name: "AttendanceStatus"
