@@ -53,7 +53,8 @@ class EventsController < ApplicationController
   end
 
   def state_attendance
-    @attendance_record = AttendanceStatus.where(user_id: @current_user.id).first
+    # @attendance_record = AttendanceStatus.where(user_id: @current_user.id).first
+    @attendance_record = AttendanceStatus.where("user_id = ? AND event_id = ?", @current_user.id, @event.id).first
 
       if (@attendance_record)
         if @attendance_record.update(event_id: @event.id, user_id: @current_user.id, status: params[:attendance_status])

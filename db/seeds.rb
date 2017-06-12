@@ -75,23 +75,22 @@ g1e[12] = g[0].events.create!(name: "Paintballing", description: "We'll go paint
 g1e[13] = g[0].events.create!(name: "The last supper", description: "We'll head over to a local pub after paintballing and unwind with some lunch where we'll get to bid our farewells.", location: "Keswick, Cumbria CA12 5RZ", dress_code: "Anything", start_time: Time.local(2017, 6, 14, 13, 00), end_time: Time.local(2017, 6, 14, 15, 00))
 
 
-g[1] = Group.create!(name: "Leonardo's Stag Do", description: "Leonardo's going to be having his stag do over the weekend from 24th to 25th June 2017.
+g[1] = Group.create!(name: "Leonardo's Stag Do", description: "Leonardo's going to be having his stag do over the Saturday 22nd July weekend.
 
-We'll be meeting up in London on Saturday the 24th for a pub crawl. See the agenda for the list of pubs we're going to be getting hammered at.
-
-I've sorted out accomodation at the Premier Inn. Check the agenda for the cost and location.
+We'll be meeting up in London on Saturday evening. See the agenda for the list of pubs we're going to be getting hammered at.
 
 We'll be going to a shooting range in the morning followed by lunch at a restaurant.
-
-We'll then do another pub crawl, visit a strip club, and continue with the pub crawl.
 
 See the agenda below for more details.", image: "http://www.henorstag.com/getattachment/Stag-Do/Locations/Stag-Party-Ireland/Stag-Do-Ideas-Mayo/Stag-Do-Ideas-Westport/Stag-Do-Westport/westport-stag-do.jpg.aspx", creator_id: u[14].id)
 
 g[1].events.create!(name: "Pub crawl", description: "We'll start the evening with a pub crawl at the Lion's Head pub", location: "The Lion's Head, Chelsea", dress_code: "Casual", start_time: Time.local(2017, 7, 22,  19, 00), end_time: Time.local(2017, 7, 22, 20, 00))
 g[1].events.create!(name: "Continuation of the pub crawl", description: "We'll move on to the next pub The King's Throne", location: "The King's Throne, Kensington", dress_code: "Casual", start_time: Time.local(2017, 7, 22,  20, 00), end_time: Time.local(2017, 7, 22, 21, 00))
-g[1].events.create!(name: "Next pub", description: "The next pub shall be The Goat's Beard", location: "The Goat's Beard, Kensington", dress_code: "Casual", start_time: Time.local(2017, 7, 22,  21, 00), end_time: Time.local(2017, 7, 22, 20, 00))
+g[1].events.create!(name: "Next pub", description: "The next pub shall be The Goat's Beard", location: "The Goat's Beard, Kensington", dress_code: "Casual", start_time: Time.local(2017, 7, 22,  21, 00), end_time: Time.local(2017, 7, 22, 22, 00))
 g[1].events.create!(name: "Next stop", description: "The next pub shall be The Goat's Beard", location: "The Tavern, Soho", dress_code: "Casual", start_time: Time.local(2017, 7, 22,  22, 00), end_time: Time.local(2017, 7, 22, 23, 00))
-g[1].events.create!(name: "Strip club", description: "We shall have a happy ending at the strip club.", location: "The Gentleman's club, Soho", dress_code: "Casual", start_time: Time.local(2017, 7, 22, 23, 00), end_time: Time.local(2017, 7, 22, 1, 00))
+g[1].events.create!(name: "Strip club", description: "We shall have a happy ending at the strip club.", location: "The Gentleman's club, Soho", dress_code: "Casual", start_time: Time.local(2017, 7, 22, 23, 00), end_time: Time.local(2017, 7, 23, 1, 00))
+g[1].events.create!(name: "Clay shooting", description: "Leonardo likes guns so I booked a shooting range for us.", location: "West London Shooters, Kingston", dress_code: "Casual", start_time: Time.local(2017, 7, 23, 10, 00), end_time: Time.local(2017, 7, 23, 12, 30))
+g[1].events.create!(name: "Lunch", description: "We'll end the stag party with lunch at a nearby restaurant.", location: "The Harvester, Kingston", dress_code: "Casual", start_time: Time.local(2017, 7, 23, 13, 00), end_time: Time.local(2017, 7, 23, 14, 30))
+
 
 g[2] = Group.create!(name: "Alexi's Stag Do", description: "Alexi's going to be having his stag do over the weekend from 24th to 25th June 2017.
 
@@ -130,7 +129,7 @@ end
 for i in 26..27
  r[i] = Request.create!(group_id: g[1].id, sender_id: u[14].id, receiver_id: u[i-6].id, status: "pending")
 end
-r[30] = Request.create!(group_id: g[1].id, sender_id: u[14].id, receiver_id: u[0].id, status: "pending")
+r[28] = Request.create!(group_id: g[1].id, sender_id: u[14].id, receiver_id: u[0].id, status: "pending")
 
 # g1e[0]
 # g1e[13]
