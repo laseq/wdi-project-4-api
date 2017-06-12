@@ -1,5 +1,5 @@
 class GroupSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :creator_id, :image
+  attributes :id, :name, :description, :creator_id, :image, :banner
   belongs_to :creator
   has_many :invited_members
   has_many :accepted_members
