@@ -24,7 +24,7 @@ Create a full stack application with a Ruby on Rails back-end and an AngularJS f
 
 For my final project at General Assembly, I wanted to create an application that people everywhere could find useful and which would satisfy the prject brief. I decided to create a website where people could organise stag and hen dos since it would require many database models and because it has the potential to be useful in the real world.
 
-As stag and hen dos can last many days and can be difficult to organise and get atendees to be in the know about the agenda, I felt that it would be a good idea to create an agenda of events so that eveyone would be in the know about what's going on at any given time. The name Henstagenda is a blend of the words 'hen', 'stag' and 'agenda'.
+As stag and hen dos can last many days and can be difficult to organise and get attendees to be in the know about the agenda, I felt that it would be a good idea to create an agenda of events so that eveyone would be in the know about what's going on at any given time. The name Henstagenda is a blend of the words 'hen', 'stag' and 'agenda'.
 
 View the project at [https://agile-cliffs-75809.herokuapp.com](https://agile-cliffs-75809.herokuapp.com).
 
